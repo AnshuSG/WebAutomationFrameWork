@@ -12,7 +12,7 @@ public class LoginPage_POM extends CommonToAllPage {
           super();
     }
 
-    //Page LOcators
+    //Page LOcators  s
   By username = By.id("login-username");
   By Password = By.id("login-password");
 
