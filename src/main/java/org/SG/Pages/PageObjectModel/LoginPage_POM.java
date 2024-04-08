@@ -1,6 +1,7 @@
 package org.SG.Pages.PageObjectModel;
 
 import org.SG.base.CommonToAllPage;
+import org.SG.utils.PropertyReader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -27,16 +28,26 @@ public class LoginPage_POM extends CommonToAllPage {
     //Page Actions
 
     public String testLoginwithInvalidCreds()  {
-        EnterInput(username,"admin");
+        EnterInput(username, PropertyReader.readkey("username"));
         EnterInput(Password,"admin");
         ClickElement(signinbutton);
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        presenceOfElement(error_msg);
+        visibilityOfElement(error_msg);
         return getElement(error_msg).getText();
 
+    }
+
+
+
+    public void testLoginwithvalidCreds()  {
+        EnterInput(username, PropertyReader.readkey("username"));
+        EnterInput(Password, PropertyReader.readkey("password"));
+        ClickElement(signinbutton);
+    }
+
+
+    public DashBoardPage_POM afterLoginVWOValidCreds(){
+        return new DashBoardPage_POM();
     }
 
 

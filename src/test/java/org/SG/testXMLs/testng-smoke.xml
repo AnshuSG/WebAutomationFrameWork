@@ -2,11 +2,14 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="D:/Surekha/ATB5X/WebAutomationFramework">
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
         <classes>
             <class name="org.SG.tests.testVWOLoginPOMBaseTest">
-                <methods>
-                    <include name="testLoginNegative"/>
-                </methods>
+
             </class>
         </classes>
     </test>

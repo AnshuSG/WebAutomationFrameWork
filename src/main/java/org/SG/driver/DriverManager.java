@@ -2,6 +2,7 @@ package org.SG.driver;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 
 public class DriverManager {
 
@@ -15,6 +16,10 @@ public class DriverManager {
    public static void init(){
         if(driver==null)
         {
+            EdgeOptions options = new EdgeOptions();
+            options.addArguments("--guest");
+            options.addArguments("--start-maximized");
+
             driver= new EdgeDriver();
         }
     }

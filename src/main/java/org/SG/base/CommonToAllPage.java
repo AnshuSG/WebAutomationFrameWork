@@ -1,6 +1,7 @@
 package org.SG.base;
 
 import org.SG.driver.DriverManager;
+import org.SG.utils.PropertyReader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -17,7 +18,7 @@ public class CommonToAllPage {
 
 
     public void openVWOLoginURL() {
-        getDriver().get("https://app.vwo.com");
+        getDriver().get(PropertyReader.readkey("url"));
     }
     public void ClickElement(By by){
         getDriver().findElement(by).click();
